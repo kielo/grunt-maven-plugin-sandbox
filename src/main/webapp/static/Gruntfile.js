@@ -2,25 +2,29 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        maven: {
-            warName: 'ROOT',
-            dist: {
-                dest: 'dist',
-                src: ["<%= pkg.name %>*.js", "js/**", "!js/test/**"]
+        gruntMavenProperties: grunt.file.readJSON('maven-inner-properties.json'),
+        mavenPrepare: {
+            options: {
+                resources: ['**']
             },
-            maven: {
-                src: ["./**"]
+            dev: {}
+        },
+        mavenDist: {
+            options: {
+                warName: 'ROOT',
+                deliverables: ["<%= pkg.name %>*.js", "*.js", "!js/test/**"]
             },
-            watch: {
-                tasks: ['default']
-            }
+            dev: {}
+        },
+        watch: {
+            files: ["<%= gruntMavenProperties.filesToWatch %>"],
+            tasks: ['default']
         }
     });
 
-    grunt.loadTasks('maven-tasks');
-    grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-maven');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
-    grunt.registerTask('default', ['maven']);
+    grunt.registerTask('default', ['mavenPrepare', 'mavenDist']);
 
 };
