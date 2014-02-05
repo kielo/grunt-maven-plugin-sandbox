@@ -2,6 +2,16 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+        karma: {
+            unit: {
+                options: {
+                    files: ['test/**/*.js'],
+                    frameworks: ['jasmine'],
+                    singleRun: true,
+                    browsers: ['PhantomJS']
+                }
+            }
+        },
         gruntMavenProperties: grunt.file.readJSON('maven-inner-properties.json'),
         mavenPrepare: {
             options: {
@@ -24,7 +34,8 @@ module.exports = function(grunt) {
 
     grunt.loadNpmTasks('grunt-maven');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-karma');
 
-    grunt.registerTask('default', ['mavenPrepare', 'mavenDist']);
+    grunt.registerTask('default', ['mavenPrepare', 'karma', 'mavenDist']);
 
 };
