@@ -5,7 +5,7 @@
     "grunt": "~0.4.2",
     "grunt-contrib-copy": "~0.5.0",
     "grunt-contrib-watch": "~0.5.3",
-    "grunt-maven": "~1.0.0",
+    "grunt-maven": "~1.1.0",
     "karma-script-launcher": "~0.1.0",
     "karma-chrome-launcher": "~0.1.2",
     "karma-firefox-launcher": "~0.1.3",

@@ -12,7 +12,7 @@ module.exports = function(grunt) {
                 }
             }
         },
-        gruntMavenProperties: grunt.file.readJSON('maven-inner-properties.json'),
+        gruntMavenProperties: grunt.file.readJSON('grunt-maven.json'),
         mavenPrepare: {
             options: {
                 resources: ['**']
