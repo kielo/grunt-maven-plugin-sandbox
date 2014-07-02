@@ -37,5 +37,5 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-karma');
 
     grunt.registerTask('default', ['mavenPrepare', 'karma', 'mavenDist']);
-
+    grunt.registerTask('test', ['karma']);
 };
