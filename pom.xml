@@ -40,8 +40,12 @@
             <plugin>
                 <groupId>pl.allegro</groupId>
                 <artifactId>grunt-maven-plugin</artifactId>
-                <version>1.3.2-SNAPSHOT</version>
+                <version>1.4.0-SNAPSHOT</version>
                 <configuration>
+                    <npmEnvironmentVar>
+                        <PHANTOMJS_CDNURL>http://cnpmjs.org/downloads</PHANTOMJS_CDNURL>
+                    </npmEnvironmentVar>
+                    
                     <filteredResources>
                         <filteredResource>maven-properties.json</filteredResource>
                     </filteredResources>
@@ -50,7 +54,7 @@
                     <execution>
                         <goals>
                             <goal>create-resources</goal>
-                            <goal>npm-offline</goal>
+                            <goal>npm</goal>
                             <goal>grunt</goal>
                         </goals>
                     </execution>
