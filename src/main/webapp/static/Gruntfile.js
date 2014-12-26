@@ -36,6 +36,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-karma');
 
-    grunt.registerTask('default', ['mavenPrepare', 'karma', 'mavenDist']);
+    grunt.registerTask('default', ['mavenPrepare', 'mavenDist']);
     grunt.registerTask('test', ['karma']);
 };
