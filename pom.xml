@@ -40,7 +40,7 @@
             <plugin>
                 <groupId>pl.allegro</groupId>
                 <artifactId>grunt-maven-plugin</artifactId>
-                <version>1.5.0-SNAPSHOT</version>
+                <version>1.5.0</version>
                 <configuration>
                     <npmEnvironmentVar>
                         <PHANTOMJS_CDNURL>http://cnpmjs.org/downloads</PHANTOMJS_CDNURL>
